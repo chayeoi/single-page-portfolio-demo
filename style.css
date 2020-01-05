@@ -1,0 +1,352 @@
+@import url('./fonts/fonts.css');
+
+/* Reset styles */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Link styles */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Global variables */
+:root {
+  --base-font-color: #565656;
+  --menu-font-color: #aaaaaa;
+  --contrast-font-color: #ffffff;
+  --section-title-font-color: #2c82c9;
+  --primary: #00aacc
+}
+
+/* Body styles */
+body {
+  color: var(--base-font-color);
+  font-family: Lato, sans-serif;
+  font-weight: 400;
+}
+
+/* A11y */
+.a11y {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  margin: -1px;
+  clip: rect(0, 0, 0, 0);
+}
+
+/* Header */
+.header {
+  position: relative;
+  height: 100vh;
+}
+
+.hero {
+  position: absolute;
+  z-index: -1000;
+  width: 100%;
+  height: 100%;
+  animation: fade 24s infinite;
+  background: #fff center / cover no-repeat;
+}
+
+.hero:nth-of-type(1) {
+  background-image: url('./images/nature-1.jpg');
+  animation-delay: 16s;
+}
+
+.hero:nth-of-type(2) {
+  background-image: url('./images/nature-2.jpg');
+  animation-delay: 8s;
+}
+
+.hero:nth-of-type(3) {
+  background-image: url('./images/nature-3.jpg');
+}
+
+.logo {
+  color: var(--contrast-font-color);
+  letter-spacing: 4px;
+}
+
+.logo a {
+  display: block;
+  padding: 32px 24px;
+  font-size: 18px;
+}
+
+.navbar-inner {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.navbar {
+  transition: background-color 0.1s;
+}
+
+.navbar.active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: #000;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.menu-list {
+  display: flex;
+  font-family: Lora;
+  font-size: 14px;
+}
+
+.menu-item {
+  min-width: 110px;
+}
+
+.menu-item a:hover, .menu-item a:focus {
+  color: var(--contrast-font-color);
+}
+
+.menu-item a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+  text-align: center;
+}
+
+.title-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 20px 0;
+  transform: translate(-50%, -50%);
+  color: var(--contrast-font-color);
+  text-align: center;
+  letter-spacing: 3px;
+}
+
+.title {
+  padding: 24px;
+  font-family: 'Playfair Display';
+  font-size: 50px;
+  line-height: 1.6;
+}
+
+.caption {
+  font-size: 12px;
+}
+
+/* Main */
+.section {
+  display: flex;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 48px 16px;
+}
+
+.section-title {
+  flex-basis: 25%;
+  padding: 12px;
+  color: var(--section-title-font-color);
+  font-family: 'Playfair Display';
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.section-content {
+  flex-basis: 75%;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+.definition-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.definition-item {
+  margin-bottom: 4px;
+}
+
+.definition-item-title {
+  flex-basis: 80px;
+}
+
+.definition-item-description {
+  flex-basis: calc(100% - 80px);
+}
+
+.category-list {
+  display: flex;
+}
+
+.category-item {
+  flex-grow: 1;
+}
+
+.skill-item-title {
+  margin-bottom: 4px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.project-item {
+  margin-bottom: 8px;
+}
+
+.project-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* Footer */
+.footer {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 24px 0;
+}
+
+.contact-title {
+  margin-bottom: 24px;
+  font-family: 'Playfair Display';
+  text-align: center;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.contact-list {
+  margin-bottom: 24px;
+  font-family: Lora;
+  font-size: 13px;
+  text-align: center;
+}
+
+.contact-item {
+  line-height: 1.6;
+  margin-bottom: 4px;
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
+}
+
+.copyright {
+  display: block;
+  padding: 24px;
+  font-size: 12px;
+}
+
+/* Etc */
+.floating-button {
+  position: fixed;
+  right: 48px;
+  bottom: 48px;
+  display: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 2px;
+  color: #616161;
+  background-color: #f5f5f5;
+  cursor: pointer;
+  transition: color, background-color 0.2s;
+}
+
+.floating-button:hover, .floating-button:focus {
+  color: #f5f5f5;
+  background: #616161;
+}
+
+.floating-button.active {
+  display: block;
+}
+
+/**
+  Backgorund auto changing animation
+  이미지 갯수: n, 한 이미지 당 노출 시간: T, 트랜지션 시간: t이라고 하면,
+  애니메이션 재생 시간(animation-duration) = nT,
+  키프레임 구간 값: [0, ((T - t) / nT) * 100, (1 / n) * 100, ((nT - t) / nT) * 100, 100]
+  (이때 키프레임 내 구간의 opacity 값은 순서대로 [1, 1, 0, 0, 1]),
+  애니메이션 지연 시간은 순서대로 [T(n-1), T(n-2), T(n-3), ...]
+*/
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  29.16666% {
+    opacity: 1;
+  }
+  33.33333% {
+    opacity: 0;
+  }
+  95.83333% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
